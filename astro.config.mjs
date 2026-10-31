@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // SITE_URL and BASE_PATH are injected by the GitHub Actions deploy workflow
 // (.github/workflows/deploy.yml), so the same code works on
-//   https://danielborgs.github.io/My-website/   (project page, base "/My-website")
+//   https://danielborgs.github.io/daniel-borges-website/   (project page, base "/daniel-borges-website")
 //   https://danielborgs.github.io/              (repo renamed to DanielBorgs.github.io)
 //   https://danielmborges.com/                  (custom domain)
 // Locally they're unset and the site is served from "/".

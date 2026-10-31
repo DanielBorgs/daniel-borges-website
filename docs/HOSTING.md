@@ -13,7 +13,7 @@ Because the site is just static files in `dist/`, it can move to Cloudflare Page
 
 ## 1. First deploy (works before you buy the domain)
 
-The repo `https://github.com/DanielBorgs/My-website` is already set as `origin`.
+The repo `https://github.com/DanielBorgs/daniel-borges-website` is already set as `origin`.
 
 1. **Check nothing private is staged.** `.env` and `private/` are gitignored; verify with:
    ```bash
@@ -28,7 +28,7 @@ The repo `https://github.com/DanielBorgs/My-website` is already set as `origin`.
 3. **Make the repo public:** GitHub → repo → Settings → General → Danger Zone → Change visibility.
 4. **Enable Pages:** Settings → Pages → *Build and deployment* → Source: **GitHub Actions**.
 5. Actions tab → re-run "Deploy to GitHub Pages" if the first run failed before step 4.
-   The site goes live at **https://danielborgs.github.io/My-website/** within ~1 minute.
+   The site goes live at **https://danielborgs.github.io/daniel-borges-website/** within ~1 minute.
 
 From then on, every `git push` to `main` redeploys automatically.
 
