@@ -1,7 +1,7 @@
 # Daniel Borges — personal website
 
 Recruiter-facing site showing my experience, research and projects, plus the LaTeX CV (public version without phone number).
-A static site built with [Astro](https://astro.build), hosted for free on GitHub Pages at **daniel-borges.com**.
+A static site built with [Astro](https://astro.build), hosted for free on GitHub Pages at **danielmborges.com**.
 
 ## Quick start
 
@@ -36,6 +36,6 @@ Requires Node.js ≥ 22.18, `pdflatex` (MiKTeX/TeX Live) for `cv`, and Chrome or
 ## Documentation
 
 - [docs/TECH_STACK.md](docs/TECH_STACK.md): what the site is built with and why.
-- [docs/HOSTING.md](docs/HOSTING.md): putting it online with GitHub Pages and daniel-borges.com.
+- [docs/HOSTING.md](docs/HOSTING.md): putting it online with GitHub Pages and danielmborges.com.
 - [docs/UPDATING_CONTENT.md](docs/UPDATING_CONTENT.md): changing content, CVs, photos.
 - [docs/QUESTIONS.md](docs/QUESTIONS.md): remaining open questions.

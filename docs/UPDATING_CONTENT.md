@@ -77,7 +77,7 @@ npm run cv
 | `private/daniel-borges-cv-with-phone.pdf` | yes | **no** (gitignored) | no |
 
 The phone number comes from `.env` (`CV_PHONE=…`). On a new computer, copy `.env.example` to `.env` and fill it in.
-The CV content and style are in `cv/cv.tex`. The phone number is never in that file: `\ifdefined\cvphone` prints it only in the private build. There, the contact line is set in `\small` so the phone, email, website, LinkedIn and GitHub all fit on one line.
+The CV content and style are in `cv/cv.tex`. The phone number is never in that file: `\ifdefined\cvphone` prints it only in the private build. There, the contact line is set in `\small` with slightly tighter word spacing so the phone, email, website, LinkedIn and GitHub all fit on one line.
 
 The website and the CV differ on purpose in one place: on the website, the JunctionX organizer and TA roles also appear (compact) in Experience; on the CV they stay under Leadership & Teaching.
 

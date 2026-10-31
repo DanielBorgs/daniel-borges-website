@@ -41,7 +41,7 @@ export const profile = {
     'M.Sc. student in Human-Centered AI at DTU. I build LLM systems that run in production — most recently a document-extraction backend used by hospitals in Portugal.',
   location: 'Ballerup, Denmark',
   email: 'danimborg@gmail.com',
-  website: 'https://daniel-borges.com',
+  website: 'https://danielmborges.com',
   github: 'https://github.com/DanielBorgs',
   linkedin: 'https://linkedin.com/in/daniel-borgs',
   /** Public CV (no phone number), built from cv/cv.tex by `npm run cv` into /public */

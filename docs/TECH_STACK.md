@@ -11,13 +11,13 @@
 | Images | Pre-cropped **WebP** in two sizes (`480w`, `960w`) with `srcset` | ~15–85 KB per photo instead of 10 MB originals. |
 | CV PDFs | **LaTeX** (`cv/cv.tex`, compiled by `scripts/build-cv.mjs` with pdflatex) | Your own CV style, kept as-is. Hyphenation off and `\pdfgentounicode` on, so applicant-tracking systems (ATS) can parse the text. |
 | SEO | `@astrojs/sitemap`, canonical URLs, Open Graph/Twitter tags, schema.org `Person` JSON-LD | Better Google results for "Daniel Borges DTU" and good link previews on LinkedIn. |
-| Hosting | **GitHub Pages** + custom domain `daniel-borges.com` | Free, HTTPS included, deploys from the public repo. |
+| Hosting | **GitHub Pages** + custom domain `danielmborges.com` | Free, HTTPS included, deploys from the public repo. |
 | CI/CD | **GitHub Actions** (`.github/workflows/deploy.yml`) | Every push to `main` builds and deploys automatically. |
 
 ## How it works
 
 ```
-src/data/cv.ts ──► src/pages/*.astro ──► astro build ──► dist/ ──► GitHub Pages (daniel-borges.com)
+src/data/cv.ts ──► src/pages/*.astro ──► astro build ──► dist/ ──► GitHub Pages (danielmborges.com)
 
 cv/cv.tex ──► scripts/build-cv.mjs (pdflatex) ──► public/daniel-borges-cv.pdf        (no phone, published)
                   ▲ CV_PHONE from .env       └──► private/…-with-phone.pdf          (gitignored)

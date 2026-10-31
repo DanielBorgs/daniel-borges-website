@@ -12,7 +12,7 @@
 | Audience | Recruiters | Short hero with availability + CTA, key numbers, experience first, "Selected work" cards |
 | Single page | Not required | Home · Projects · About |
 | Hero | Less text, AI-related animation, use the 3 stage photos | Vision-model "detection" animation over the photos |
-| Domain | `daniel-borges.com` | Default site URL; DNS steps in HOSTING.md |
+| Domain | `danielmborges.com` | Default site URL; DNS steps in HOSTING.md |
 | Repo | Public, GitHub Pages | Phone number kept out of the repo (`.env`, `private/`) |
 | Availability | Part-time: up to 20 h/week, Copenhagen area or remote. Summer 2027: open to any location | Hero chips, contact cards, CV header |
 
@@ -49,7 +49,7 @@ Name your teammate (Duarte Cruz?) and link their GitHub?
 | Portuguese version (`/pt/`) | No |
 | Privacy-friendly analytics (no cookie banner) | No |
 | Blog / write-ups | Not now |
-| Email at your domain (`daniel@daniel-borges.com`) | No, using Gmail |
+| Email at your domain (`daniel@danielmborges.com`) | No, using Gmail |
 
 ### 7. Move the project out of OneDrive?
 See HOSTING.md, "Note on the project folder".
