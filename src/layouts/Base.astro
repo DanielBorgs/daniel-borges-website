@@ -1,0 +1,126 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource/instrument-serif';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Icon from '../components/Icon.astro';
+import { profile } from '../data/cv';
+
+interface Props {
+  /** Page name, e.g. "Projects". Omit on the homepage. */
+  title?: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = `${profile.name} — ${profile.role} (${profile.focus}). M.Sc. student in Human-Centered AI at DTU, open to part-time roles in Copenhagen and Summer 2027 internships.`,
+} = Astro.props;
+
+const fullTitle = title ? `${title} — ${profile.name}` : `${profile.name} — ${profile.role}, ${profile.focus}`;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const year = new Date().getFullYear();
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: profile.role,
+  email: `mailto:${profile.email}`,
+  url: new URL(base, Astro.site).href,
+  image: new URL(`${base}images/stage-2-480.webp`, Astro.site).href,
+  sameAs: [profile.github, profile.linkedin],
+  alumniOf: ['Instituto Superior Técnico', 'Technical University of Denmark'],
+  address: { '@type': 'PostalAddress', addressLocality: 'Ballerup', addressCountry: 'DK' },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="sitemap" href={`${base}sitemap-index.xml`} />
+    <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(`${base}og.png`, Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+    <!-- Apply saved theme before paint to avoid a flash -->
+    <script is:inline>
+      try {
+        const t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container inner">
+        <p>© {year} {profile.name}</p>
+        <ul>
+          <li><a href={`mailto:${profile.email}`} aria-label="Email"><Icon name="mail" /></a></li>
+          <li><a href={profile.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><Icon name="linkedin" /></a></li>
+          <li><a href={profile.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer"><Icon name="github" /></a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-footer {
+    padding: 2rem 0 3rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: var(--muted);
+    display: grid;
+  }
+
+  a:hover {
+    color: var(--text);
+  }
+
+  ul :global(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+</style>

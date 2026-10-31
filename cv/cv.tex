@@ -1,0 +1,135 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.55in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\widowpenalty=10000
+\clubpenalty=10000
+% No line-break hyphenation, so ATS parsers see whole keywords (PostgreSQL, scikit-learn, macro-F1)
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=3em
+
+\definecolor{accent}{HTML}{173B57}
+\hypersetup{colorlinks=true,urlcolor=accent,pdftitle={Daniel Martins Borges - CV},pdfauthor={Daniel Martins Borges}}
+\pdfgentounicode=1
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.2em,topsep=2pt,itemsep=1pt,parsep=0pt}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+
+\newcommand{\entry}[2]{\textbf{#1}\hfill\textit{#2}\par}
+\newcommand{\role}[2]{\textit{#1}\hfill\textit{#2}\par}
+
+% The phone number is NOT stored here (this repo is public). `npm run cv` passes it
+% from .env as \cvphone for the private build only; the public build omits it.
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries Daniel Martins Borges}\\[3pt]
+    {\large Student Software Engineer \textbar\ LLM Applications \& Machine Learning}\\[4pt]
+    % With the phone number the contact line is slightly too long at normal size, so it is set in \small to stay on one line.
+    {\ifdefined\cvphone\small \cvphone\ \textbar\ \fi
+    \href{mailto:danimborg@gmail.com}{danimborg@gmail.com} \textbar\
+    \href{https://daniel-borges.com}{daniel-borges.com} \textbar\
+    \href{https://linkedin.com/in/daniel-borgs}{linkedin.com/in/daniel-borgs} \textbar\
+    \href{https://github.com/DanielBorgs}{github.com/DanielBorgs}}\\[2pt]
+    Ballerup, Denmark \textbar\ Available now, up to 20 hours/week \textbar\ Summer 2027 internship: open to any location
+\end{center}
+
+\section*{Summary}
+M.Sc. student in Human-Centered AI at DTU (B.Sc. in Computer Science and Engineering, IST Lisbon, 18/20, ECTS A). As an intern at Quidgest, built in a team of two the Node.js backend of an LLM-based document-extraction system now in production at hospitals of one of Portugal's largest healthcare groups, including a provider-agnostic layer over cloud LLM APIs and local Ollama models that lets sensitive patient data stay on-premises. 2nd place in the NTT Data ML Challenge with a published paper (fine-tuned BERTimbau), 1st place at JunctionX Lisbon 2025, and a merged contributor to CVAT.
+
+\section*{Technical Skills}
+\begin{itemize}
+    \item \textbf{LLMs \& AI:} LLM APIs (OpenAI, Anthropic, Google, Mistral), local LLM inference (Ollama), prompt engineering, LLM-based OCR and document extraction, embeddings, PyTorch, Hugging Face, BERT fine-tuning, YOLOv8 (segmentation), scikit-learn, NLP, computer vision, model evaluation (macro-F1, held-out test sets, cross-validation), LIME
+    \item \textbf{Programming Languages:} Python, TypeScript, JavaScript, Java, C, C++
+    \item \textbf{Backend \& Data:} Node.js, API development, PostgreSQL, SQL, Firebase/Firestore
+    \item \textbf{Mobile \& Web:} React Native, WordPress
+    \item \textbf{DevOps \& Testing:} Docker, GitLab CI, Railway (cloud deployment), unit testing, Cypress (end-to-end testing), Postman, Git
+    \item \textbf{Spoken Languages:} Portuguese (native), English (Cambridge Advanced English, CAE)
+\end{itemize}
+
+\section*{Experience}
+\entry{Quidgest}{Lisbon, Portugal}
+\role{Software Engineering Summer Intern}{Jul 2025 -- Aug 2025}
+\begin{itemize}
+    \item In a team of two, built the backend of an LLM-based OCR and vision system that extracts structured data from medical receipts and scanned documents of up to hundreds of pages. In production on Quidgest's servers, used by hospitals of one of Portugal's largest healthcare groups.
+    \item Designed a provider-agnostic model layer that switches between cloud LLM providers (Anthropic, OpenAI, Google, Mistral) and locally hosted Ollama models, so sensitive patient data can stay on-premises.
+    \item Built API endpoints and a streaming file-upload pipeline in Node.js (Busboy, Formidable) with PostgreSQL; developed in Docker, tested with Postman and gated by automated GitLab CI tests.
+\end{itemize}
+
+\entry{Systems Group (Junior Enterprise)}{Lisbon, Portugal}
+\role{Project Manager}{Sep 2024 -- Jun 2026}
+\role{Full-Stack Developer}{Sep 2023 -- Jun 2026}
+\begin{itemize}
+    \item Owned the admin side of a React Native / JavaScript mobile app in a 5-person agile team during the first 12 months of the role: management of users, treatments, appointments, permissions and publications on Firebase/Firestore, with separate storage for admin image uploads.
+    \item As Project Manager, led a 4-person team that built a website for the same client and the Junior Enterprise's own website (WordPress). Turned client requirements into tasks, ran weekly meetings and reviewed the team's code.
+\end{itemize}
+
+\section*{Research}
+\entry{NTT Data ML Challenge 2025/26 --- Portuguese Fake News Detection (2nd Place)}{Feb 2026}
+\begin{itemize}
+    \item Co-authored a \href{https://zenodo.org/records/18393436}{published research paper} with one teammate (\href{https://github.com/DuarteCruz6/pt-fake-news-detection}{code}) and presented it to the NTT Data CEO and a panel of academic judges.
+    \item Fine-tuned BERTimbau (a Brazilian Portuguese BERT model) in PyTorch to 0.948 macro-F1 on a 6,324-article held-out test set, up from 0.926 for the best classical baseline (TF-IDF + MLP).
+    \item Benchmarked MLP, SVM and Logistic Regression classifiers on TF-IDF features over 63,000+ articles, tuned with 5-fold cross-validated grid search; explained predictions with LIME and permutation importance, and clustered articles semantically using embeddings, K-Means and PCA.
+\end{itemize}
+
+\section*{Open Source \& Projects}
+\entry{CVAT (Computer Vision Annotation Tool) --- Open-Source Contributor}{Feb 2026 -- Jun 2026}
+\begin{itemize}
+    \item Fixed a UI scaling bug, merged by the maintainers (\href{https://github.com/cvat-ai/cvat/pull/10403}{PR \#10403}).
+    \item Implemented rotate, scale and mirror for bounding boxes on polygon and polyline tracks, with unit tests and Cypress end-to-end tests (\href{https://github.com/cvat-ai/cvat/pull/10686}{PR \#10686}).
+\end{itemize}
+
+\entry{JunctionX Lisbon 2025 (1st Place) --- Invasive Species Predictor}{Oct 2025}
+\begin{itemize}
+    \item Won first place in a team of three with a tool for Albatroz Engenharia that flags high-risk invasive plant-species expansion zones from satellite imagery.
+    \item Led the ML component: collected and cleaned the geospatial and satellite data and trained a YOLOv8 segmentation model. The pipeline also visualizes before-and-after scenarios.
+\end{itemize}
+
+\entry{HackEurope Dublin --- Unscrolling AI Assistant}{Feb 2026}
+\begin{itemize}
+    \item In a team of three, built the \href{https://github.com/DuarteCruz6/backend-hackeurope}{backend} of a personalized briefing assistant that scrapes and ranks daily updates on user-selected topics, summarizes them with multiple LLMs and turns them into podcast-style audio via text-to-speech. Deployed on Railway.
+\end{itemize}
+
+\entry{Junction Finland --- BetterMeeting AR}{Nov 2025}
+\begin{itemize}
+    \item In a team of three, built an AR meeting assistant for Snapchat Spectacles: live subtitles with real-time translation, LLM-generated task lists and meeting summaries, and personalized text-to-speech feedback with ElevenLabs.
+\end{itemize}
+
+\section*{Leadership \& Teaching}
+\entry{JunctionX Lisbon}{Lisbon, Portugal}
+\role{Co-Lead Organizer (Tech \& Logistics) and Treasurer}{Jan 2026 -- Present}
+\begin{itemize}
+    \item Co-led an 8-person team that delivered an international AI/ML hackathon for 150 participants (10--11 Oct 2026). Secured and managed a EUR 22,500 budget by negotiating sponsorships with international technology companies.
+    \item Built the event website and ran the technical infrastructure for participant applications and event operations.
+\end{itemize}
+
+\entry{Instituto Superior Técnico (IST)}{Lisbon, Portugal}
+\role{Teaching Assistant --- Programming Fundamentals}{Aug 2025 -- Nov 2025}
+\begin{itemize}
+    \item Ran lab sessions for 24 introductory programming students and graded their projects. Rated 9/9 overall by students, with the top ``Excellent'' rating in Classroom Learning Benefit, Pedagogical Skills and Student Interaction.
+\end{itemize}
+
+\section*{Education}
+\entry{Technical University of Denmark (DTU)}{Kongens Lyngby, Denmark}
+\role{M.Sc. in Human-Centered Artificial Intelligence}{Sep 2026 -- Expected Jul 2028}
+\begin{itemize}
+    \item Courses in progress: Deep Learning, Machine Learning for Signal Processing, Social Graphs and Interactions, Logical Theories for Learning and Uncertainty.
+\end{itemize}
+
+\entry{Instituto Superior Técnico (IST)}{Lisbon, Portugal}
+\role{B.Sc. in Computer Science and Engineering}{Sep 2023 -- Jul 2026}
+\begin{itemize}
+    \item Final grade 18/20 (Excellent, ECTS Grade A). Academic Excellence Diploma (2024/2025) and Academic Merit Diploma (2023/2024).
+\end{itemize}
+
+\end{document}

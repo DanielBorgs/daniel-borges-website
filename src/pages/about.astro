@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import EntryCard from '../components/EntryCard.astro';
+import { profile, leadership, skills } from '../data/cv';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const languages = skills.find((s) => s.group === 'Spoken Languages')?.items ?? [];
+---
+
+<Base
+  title="About"
+  description="About Daniel Martins Borges: M.Sc. Human-Centered AI student at DTU, hackathon organizer and teaching assistant."
+>
+  <header class="container page-head">
+    <h1>About</h1>
+  </header>
+
+  <div class="container about">
+    <figure>
+      <img
+        src={`${base}images/stage-3-960.webp`}
+        srcset={`${base}images/stage-3-480.webp 480w, ${base}images/stage-3-960.webp 960w`}
+        sizes="(min-width: 900px) 360px, 90vw"
+        width="960"
+        height="1200"
+        alt="Daniel presenting at JunctionX Lisbon 2026"
+        loading="lazy"
+      />
+      <figcaption>Opening JunctionX Lisbon 2026, a 150-participant AI/ML hackathon I co-organized.</figcaption>
+    </figure>
+    <div class="text">
+      {profile.about.map((p) => <p>{p}</p>)}
+      <p class="langs"><strong>Languages:</strong> {languages.join(' · ')}</p>
+    </div>
+  </div>
+
+  <Section id="leadership" title="Leadership & Teaching">
+    {leadership.map((e) => <EntryCard entry={e} />)}
+  </Section>
+</Base>
+
+<style>
+  .about {
+    display: grid;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 900px) {
+    .about {
+      grid-template-columns: 22rem 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+  }
+
+  figure {
+    margin: 0;
+    max-width: 24rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+  }
+
+  figcaption {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+  }
+
+  .text {
+    display: grid;
+    gap: 1rem;
+    max-width: 42rem;
+    font-size: 1.05rem;
+  }
+
+  .langs {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+</style>

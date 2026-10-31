@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import EntryCard from '../components/EntryCard.astro';
+import { research, projects } from '../data/cv';
+---
+
+<Base
+  title="Projects & Research"
+  description="Research, open-source contributions and hackathon projects by Daniel Martins Borges: fake-news detection with BERTimbau (published), CVAT, YOLOv8 satellite segmentation and LLM assistants."
+>
+  <header class="container page-head">
+    <h1>Projects & Research</h1>
+    <p>A published paper, merged open-source work and award-winning hackathon builds.</p>
+  </header>
+
+  <Section id="research" title="Research" kicker="Published work">
+    {research.map((e) => <EntryCard entry={e} />)}
+  </Section>
+
+  <Section id="projects" title="Projects" kicker="Open source and hackathons">
+    {projects.map((e) => <EntryCard entry={e} />)}
+  </Section>
+</Base>
