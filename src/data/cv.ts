@@ -269,7 +269,7 @@ export const skills: { group: string; items: string[] }[] = [
       'LIME',
     ],
   },
-  { group: 'Programming Languages', items: ['Python', 'TypeScript', 'JavaScript', 'Java', 'C', 'C++'] },
+  { group: 'Programming Languages', items: ['Python', 'TypeScript', 'JavaScript', 'Java', 'C', 'C++', 'C#'] },
   { group: 'Backend & Data', items: ['Node.js', 'FastAPI', 'API development', 'PostgreSQL', 'SQL', 'Firebase/Firestore'] },
   { group: 'Mobile & Web', items: ['React Native', 'WordPress'] },
   {
