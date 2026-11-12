@@ -187,7 +187,7 @@ export const projects: Entry[] = [
     bullets: [
       'In a team of three, built the backend of a personalized briefing assistant that scrapes and ranks daily updates on user-selected topics, summarizes them with multiple LLMs and turns them into podcast-style audio via text-to-speech. Deployed on Railway.',
     ],
-    tags: ['LLMs', 'Text-to-speech', 'Railway'],
+    tags: ['LLMs', 'FastAPI', 'Text-to-speech', 'Railway'],
     links: [{ label: 'Backend', href: 'https://github.com/DuarteCruz6/backend-hackeurope' }],
   },
   {
@@ -270,7 +270,7 @@ export const skills: { group: string; items: string[] }[] = [
     ],
   },
   { group: 'Programming Languages', items: ['Python', 'TypeScript', 'JavaScript', 'Java', 'C', 'C++'] },
-  { group: 'Backend & Data', items: ['Node.js', 'API development', 'PostgreSQL', 'SQL', 'Firebase/Firestore'] },
+  { group: 'Backend & Data', items: ['Node.js', 'FastAPI', 'API development', 'PostgreSQL', 'SQL', 'Firebase/Firestore'] },
   { group: 'Mobile & Web', items: ['React Native', 'WordPress'] },
   {
     group: 'DevOps & Testing',
