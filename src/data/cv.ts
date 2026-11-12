@@ -38,7 +38,7 @@ export const profile = {
   focus: 'LLM applications & machine learning',
   /** One sentence for the top of the homepage */
   pitch:
-    'M.Sc. student in Human-Centered AI at DTU. I build LLM systems that run in production — most recently a document-extraction backend used by hospitals in Portugal.',
+    'M.Sc. student in Human-Centered AI at DTU. I build AI systems that run in the real world — from a document-extraction backend used by hospitals in Portugal to the vision-based navigation of an underwater mine-disposal drone.',
   location: 'Ballerup, Denmark',
   email: 'danimborg@gmail.com',
   website: 'https://danielmborges.com',
@@ -50,7 +50,8 @@ export const profile = {
   about: [
     'I’m an M.Sc. student in Human-Centered AI at DTU, after a B.Sc. in Computer Science and Engineering at IST Lisbon (18/20, ECTS A).',
     'I like building AI systems that real people depend on. At Quidgest, a teammate and I built the backend of an LLM-based document-extraction system that is now in production at hospitals of one of Portugal’s largest healthcare groups — including a provider-agnostic layer that can run local Ollama models so sensitive patient data never leaves the premises.',
-    'On the ML side, I fine-tuned BERTimbau for Portuguese fake-news detection (2nd place in the NTT Data ML Challenge, published paper), trained a YOLOv8 segmentation model on satellite imagery that won JunctionX Lisbon 2025, and contribute to the open-source annotation tool CVAT.',
+    'Most recently, I built the vision-based navigation for Nordhal Defence, a Danish defence startup: a YOLO26 segmentation model trained on simulator footage from a seabed generator I wrote, which lets its U-1A Legion underwater drone avoid obstacles and close in on sea mines. It is being deployed on the company’s drones.',
+    'On the ML side, I also fine-tuned BERTimbau for Portuguese fake-news detection (2nd place in the NTT Data ML Challenge, published paper), trained a YOLOv8 segmentation model on satellite imagery that won JunctionX Lisbon 2025, and contribute to the open-source annotation tool CVAT.',
     'Outside engineering I organize hackathons and teach: I co-led the team behind JunctionX Lisbon 2026 and was a teaching assistant for introductory programming at IST, rated 9/9 by my students.',
   ],
 };
@@ -132,6 +133,21 @@ export const research: Entry[] = [
 
 export const projects: Entry[] = [
   {
+    id: 'nordhal',
+    title: 'Underwater Drone Navigation',
+    org: 'Nordhal Defence',
+    location: 'Copenhagen, Denmark',
+    period: 'Nov 2026',
+    featured: true,
+    summary: 'Vision-based navigation for a Danish defence startup’s underwater drone: YOLO26 segmentation of seabed, obstacles and sea mines, plus obstacle avoidance. Being deployed on the company’s drones.',
+    bullets: [
+      'In partnership with the Danish defence startup, built the vision-based navigation of its U-1A Legion, a low-cost underwater mine-disposal drone. Being deployed on its real drones.',
+      'Built a procedural seabed terrain generator to produce labelled simulator footage, trained a YOLO26 segmentation model that detects the seabed, obstacles and sea mines in murky water, and wrote the algorithm that steers the drone around obstacles and onto detected mines.',
+    ],
+    tags: ['YOLO26', 'Computer vision', 'Robotics', 'Simulation', 'Synthetic data', 'Python'],
+    links: [{ label: 'Nordhal Defence', href: 'https://www.nordhal.dk/' }],
+  },
+  {
     id: 'cvat',
     title: 'Open-Source Contributor',
     org: 'CVAT (Computer Vision Annotation Tool)',
@@ -167,7 +183,6 @@ export const projects: Entry[] = [
     title: 'Unscrolling AI Assistant',
     org: 'HackEurope Dublin',
     period: 'Feb 2026',
-    featured: true,
     summary: 'Briefing assistant that scrapes and ranks daily news, summarizes it with multiple LLMs and turns it into podcast-style audio.',
     bullets: [
       'In a team of three, built the backend of a personalized briefing assistant that scrapes and ranks daily updates on user-selected topics, summarizes them with multiple LLMs and turns them into podcast-style audio via text-to-speech. Deployed on Railway.',
@@ -246,7 +261,7 @@ export const skills: { group: string; items: string[] }[] = [
       'PyTorch',
       'Hugging Face',
       'BERT fine-tuning',
-      'YOLOv8 (segmentation)',
+      'YOLO segmentation (YOLOv8, YOLO26)',
       'scikit-learn',
       'NLP',
       'computer vision',
