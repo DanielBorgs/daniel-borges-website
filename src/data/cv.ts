@@ -94,7 +94,7 @@ export const experience: Entry[] = [
   {
     id: 'systems-group',
     title: 'Project Manager',
-    org: 'Systems Group (Junior Enterprise)',
+    org: 'Systems Group',
     location: 'Lisbon, Portugal',
     period: 'Sep 2023 – Jun 2026',
     roles: [
@@ -103,7 +103,7 @@ export const experience: Entry[] = [
     ],
     bullets: [
       'Owned the admin side of a React Native / JavaScript mobile app in a 5-person agile team during the first 12 months of the role: management of users, treatments, appointments, permissions and publications on Firebase/Firestore, with separate storage for admin image uploads.',
-      'As Project Manager, led a 4-person team that built a website for the same client and the Junior Enterprise’s own website (WordPress). Turned client requirements into tasks, ran weekly meetings and reviewed the team’s code.',
+      'As Project Manager, led a 4-person team that built a website for the same client and Systems Group’s own website (WordPress). Turned client requirements into tasks, ran weekly meetings and reviewed the team’s code.',
     ],
     tags: ['React Native', 'JavaScript', 'Firebase', 'WordPress', 'Team leadership'],
   },
@@ -273,8 +273,8 @@ export const skills: { group: string; items: string[] }[] = [
   { group: 'Backend & Data', items: ['Node.js', 'FastAPI', 'API development', 'PostgreSQL', 'SQL', 'Firebase/Firestore'] },
   { group: 'Mobile & Web', items: ['React Native', 'WordPress'] },
   {
-    group: 'DevOps & Testing',
-    items: ['Docker', 'GitLab CI', 'Railway (cloud deployment)', 'unit testing', 'Cypress (end-to-end testing)', 'Postman', 'Git'],
+    group: 'Cloud, DevOps & Testing',
+    items: ['Cloud computing', 'Azure', 'Railway (cloud deployment)', 'Linux', 'Docker', 'GitLab CI', 'unit testing', 'Cypress (end-to-end testing)', 'Postman', 'Git'],
   },
   { group: 'Spoken Languages', items: ['Portuguese (native)', 'English (Cambridge Advanced English, CAE)'] },
 ];
