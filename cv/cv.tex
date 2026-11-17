@@ -34,7 +34,6 @@
 
 \begin{center}
     {\LARGE\bfseries Daniel Martins Borges}\\[3pt]
-    {\large Student Software Engineer \textbar\ LLM Applications \& Machine Learning}\\[4pt]
     % With the phone number the contact line is slightly too long at normal size, so it is set in \small
     % with slightly tighter word spacing to stay on one line.
     {\ifdefined\cvphone\small\spaceskip=0.25em plus 0.1em minus 0.05em\relax \cvphone\ \textbar\ \fi
@@ -43,6 +42,8 @@
     \href{https://linkedin.com/in/daniel-borgs}{linkedin.com/in/daniel-borgs} \textbar\
     \href{https://github.com/DanielBorgs}{github.com/DanielBorgs}}\\[2pt]
     % `npm run cv` can define \cvhidenow or \cvhideinternship to build the targeted private variants.
+    % With both availability items the line is too long, so the title is left out there.
+    \ifdefined\cvhidenow Student Software Engineer \textbar\ \else\ifdefined\cvhideinternship Student Software Engineer \textbar\ \fi\fi
     Ballerup, Denmark\ifdefined\cvhidenow\else{} \textbar\ Available now, up to 20 hours/week\fi
     \ifdefined\cvhideinternship\else{} \textbar\ Summer 2027 internship: open to any location\fi
 \end{center}
