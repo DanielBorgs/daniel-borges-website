@@ -263,6 +263,7 @@ export const skills: { group: string; items: string[] }[] = [
       'BERT fine-tuning',
       'YOLO segmentation (YOLOv8, YOLO26)',
       'scikit-learn',
+      'pandas',
       'NLP',
       'computer vision',
       'model evaluation (macro-F1, held-out test sets, cross-validation)',
