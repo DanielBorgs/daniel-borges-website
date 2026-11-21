@@ -3,6 +3,8 @@
 //   private/daniel-borges-cv-with-phone.pdf   → local only (gitignored), phone from CV_PHONE in .env
 //   private/daniel-borges-cv-internship.pdf   → same, header shows only the summer 2027 internship
 //   private/daniel-borges-cv-part-time.pdf    → same, header shows only "available now, up to 20 h/week"
+// If CV_COPY_DIR is set in .env, the three private CVs are also copied there as
+// "CV - Daniel Borges.pdf", "CV - Daniel Borges (Internship).pdf" and "CV - Daniel Borges (Part-Time).pdf".
 //
 // Usage: npm run cv
 import { execFileSync } from 'node:child_process';
@@ -45,4 +47,18 @@ if (phone) {
   // Targeted variants: only the summer 2027 internship, or only the part-time "available now" line.
   compile(join(root, 'private', 'daniel-borges-cv-internship.pdf'), phone, ['now']);
   compile(join(root, 'private', 'daniel-borges-cv-part-time.pdf'), phone, ['internship']);
+
+  // Optional extra copies of the private CVs (e.g. a folder on the Desktop), from CV_COPY_DIR in .env.
+  const copyDir = process.env.CV_COPY_DIR;
+  if (copyDir) {
+    mkdirSync(copyDir, { recursive: true });
+    for (const [src, dest] of [
+      ['daniel-borges-cv-with-phone.pdf', 'CV - Daniel Borges.pdf'],
+      ['daniel-borges-cv-internship.pdf', 'CV - Daniel Borges (Internship).pdf'],
+      ['daniel-borges-cv-part-time.pdf', 'CV - Daniel Borges (Part-Time).pdf'],
+    ]) {
+      copyFileSync(join(root, 'private', src), join(copyDir, dest));
+      console.log(`✓ ${join(copyDir, dest)}`);
+    }
+  }
 } else console.warn('! CV_PHONE not set in .env, so the private CV with phone number was skipped.');
